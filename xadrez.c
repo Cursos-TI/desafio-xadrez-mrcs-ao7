@@ -2,14 +2,16 @@
 
 int main(){
     char opcao;
-    int torre = 1, bispo = 1;
+    int torre = 1, bispo = 1, rainha;
+    int cavaloM1 = 1, cavaloM2;
     
     // Escolha de qual peça movimentar //
-    printf("Escolha qual peça movimentar>\n");
+    printf("Escolha qual peça movimentar nessa rodada>\n");
     printf("Digite sua respectiva inicial>\n \n");
     printf("T.orre>\n");
     printf("B.ispo>\n");
-    printf("R.ainha> ");
+    printf("R.ainha>\n");
+    printf("C.avalo> ");
     scanf("%c", &opcao);
 
     // Movimento da peça escolhida //
@@ -19,7 +21,7 @@ int main(){
         case 't':
         // Movimento da Torre (while) //
         // Vai rodar enquanto a quantidade de movimento não ser 5 //
-            printf("\nA Torre vai andar 5 casas para a direita!\n \n");
+            printf("\nA Torre vai andar 5 casas para a direita!\n");
 
             while (torre <= 5)
             {
@@ -27,13 +29,14 @@ int main(){
                 torre++;
             }
             printf("\n"); // Detalhe estético //
+            printf("O oponente irá se movimentar...\n \n");
             break;
 
         case 'B':
         case 'b':
             // Movimento do Bispo (do-while) //
             // Vai rodar enquanto a quantidade de movimento não ser 5 //
-            printf("\nO Bispo vai andar 5 casas para a diagonal direita!\n \n");
+            printf("\nO Bispo vai andar 5 casas para a diagonal direita!\n");
 
             do
             {
@@ -42,6 +45,7 @@ int main(){
 
             } while (bispo <= 5);
             printf("\n"); // Detalhe estético //
+            printf("O oponente irá se movimentar...\n \n");
             break;
 
 
@@ -49,13 +53,32 @@ int main(){
         case 'r':
             // Movimento da Rainha (for) //
             // Vai rodar enquanto a quantidade de movimento não ser 8 //
-            printf("\nA Rainha vai andar 8 casas para a esquerda!\n \n");
+            printf("\nA Rainha vai andar 8 casas para a esquerda!\n");
 
-            for(int rainha = 1; rainha <= 8; rainha++)
+            for(rainha = 1; rainha <= 8; rainha++)
             {
                 printf("Esquerda\n");
             }
             printf("\n"); // Detalhe estético //
+            printf("O oponente irá se movimentar...\n \n"); 
+            break;
+
+        case 'C':
+        case 'c':
+            // Movimento do Cavalo (for/while) //
+            printf("\nO Cavalo vai andar 2 casas para baixo e 1 para a esquerda!\n");
+            for(cavaloM2 = 1; cavaloM2 <= 1; cavaloM2++) // Só irá rodar quando o código interno finalizar //
+            {
+                while(cavaloM1 <= 2) // Vai rodar enquanto o movimento para baixo não sair duas vezes //
+                {
+                    printf("Baixo\n");
+                    cavaloM1++;
+                }
+
+                printf("Esquerda\n");
+            }
+            printf("\n"); // Detalhe estético //
+            printf("O oponente irá se movimentar...\n \n");
             break;
 
         default:
